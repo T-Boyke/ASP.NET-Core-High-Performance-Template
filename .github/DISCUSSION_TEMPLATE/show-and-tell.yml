@@ -1,0 +1,19 @@
+title: "Showcase: [Projektname]"
+body:
+  - type: input
+    id: link
+    attributes:
+      label: Link zum Projekt / Repo
+      placeholder: "https://github.com/..."
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Beschreibung
+      description: Erzähl uns, was du gebaut hast und wie das Template dir geholfen hat!
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: "🎉 Danke, dass du dein Projekt teilst!"

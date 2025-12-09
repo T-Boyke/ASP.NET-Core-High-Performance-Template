@@ -1,0 +1,18 @@
+title: "Frage: [Kurzbeschreibung]"
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Was möchtest du wissen?
+      description: Beschreibe deine Frage so genau wie möglich.
+      placeholder: "Ich verstehe nicht, wie ich..."
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Kontext & Versuche
+      description: Was hast du bereits versucht, um das Problem zu lösen?
+      placeholder: "Ich habe in der Doku nachgeschaut und folgendes probiert..."
+    validations:
+      required: true

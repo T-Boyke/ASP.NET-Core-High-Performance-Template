@@ -1,0 +1,24 @@
+# http://editorconfig.org
+root = true
+
+# Generelle Einstellungen für alle Dateien
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 2
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Markdown-Dateien: Manchmal sind trailing spaces für Zeilenumbrüche gewollt, 
+# aber in modernen Readmes oft besser ohne. Hier strikt bereinigt.
+[*.md]
+trim_trailing_whitespace = false
+
+# Bash/Shell Scripte & Makefile (Tabulatoren oft notwendig)
+[Makefile]
+indent_style = tab
+indent_size = 4
+
+[*.sh]
+end_of_line = lf

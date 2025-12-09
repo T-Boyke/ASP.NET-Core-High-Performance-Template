@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Fragen & Diskussionen
+    url: https://github.com/T-Boyke/[REPO_NAME]/discussions
+    about: Bitte stelle Fragen hier, anstatt ein Issue zu öffnen.
+  - name: 🔐 Sicherheitslücke melden
+    url: https://github.com/T-Boyke/[REPO_NAME]/security/advisories/new
+    about: Bitte melde Sicherheitslücken nicht öffentlich.

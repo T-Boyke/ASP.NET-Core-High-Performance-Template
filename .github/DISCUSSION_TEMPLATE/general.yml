@@ -1,0 +1,9 @@
+title: "[Allgemein] "
+body:
+  - type: textarea
+    id: content
+    attributes:
+      label: Worüber möchtest du sprechen?
+      description: Offene Diskussion über Themen rund um das Projekt.
+    validations:
+      required: true

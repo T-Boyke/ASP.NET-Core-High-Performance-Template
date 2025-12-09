@@ -1,0 +1,12 @@
+# Diese Datei definiert, wer für welche Dateien verantwortlich ist.
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Standard-Besitzer für alles
+* @T-Boyke
+
+# Spezifische Besitzer für Dokumentation
+/docs/  @T-Boyke
+*.md    @T-Boyke
+
+# GitHub Workflows
+/.github/workflows/ @T-Boyke

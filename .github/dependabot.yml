@@ -1,0 +1,38 @@
+version: 2
+updates:
+  # 1. Angular, TypeScript, JavaScript (Node.js)
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+
+  # 2. C# / .NET (NuGet Pakete)
+  - package-ecosystem: "nuget"
+    directory: "/" # Falls deine .csproj in einem Unterordner liegt (z.B. /src), ändere dies zu "/src"
+    schedule:
+      interval: "weekly"
+
+  # 3. Java (Wähle maven oder gradle - meist reicht einer)
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+  
+  # Alternativ für Java mit Gradle:
+  # - package-ecosystem: "gradle"
+  #   directory: "/"
+  #   schedule:
+  #     interval: "weekly"
+
+  # 4. GitHub Actions (Wichtig für deine CI/CD Pipeline selbst)
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+      
+  # 5. Docker (Optional: Falls du SQL-Datenbanken als Container nutzt)
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "monthly"

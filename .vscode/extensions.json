@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "yzhang.markdown-all-in-one",
+    "streetsidesoftware.code-spell-checker",
+    "eamodio.gitlens",
+    "hediet.vscode-drawio",
+    "MermaidChart.vscode-mermaid-chart"
+  ]
+}

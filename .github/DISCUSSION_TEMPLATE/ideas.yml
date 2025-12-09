@@ -1,0 +1,17 @@
+title: "Idee: [Kurzbeschreibung]"
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Welches Problem wird gelöst?
+      description: Beschreibe, warum wir diese Idee brauchen.
+      placeholder: "Es ist aktuell schwierig, dass..."
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Lösungsvorschlag
+      description: Wie sollte es funktionieren?
+    validations:
+      required: true
