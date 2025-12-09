@@ -22,3 +22,23 @@ indent_size = 4
 
 [*.sh]
 end_of_line = lf
+
+[*.cs]
+# Organize Usings
+dotnet_sort_system_directives_first = true
+dotnet_separate_import_directive_groups = true
+
+# Code Style
+csharp_style_namespace_declarations = file_scoped
+csharp_style_expression_bodied_methods = true:suggestion
+csharp_style_var_for_built_in_types = true:suggestion
+
+# Naming (Interfaces müssen mit I beginnen)
+dotnet_naming_rule.interface_should_be_began_with_i.severity = warning
+dotnet_naming_symbols.interface.applicable_kinds = interface
+dotnet_naming_style.interface.required_prefix = I
+dotnet_naming_rule.interface_should_be_began_with_i.symbols = interface
+dotnet_naming_rule.interface_should_be_began_with_i.style = interface
+
+# Erzwingt "Single Class per File" (Indirekt über Dateinamen-Warnung)
+dotnet_style_require_file_header = true
