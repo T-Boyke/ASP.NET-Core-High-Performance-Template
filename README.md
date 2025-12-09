@@ -1,14 +1,17 @@
 <a name="readme-top"></a>
 
 ---
+
 ### 📝 So verwendest du dieses Template
+
 Nachdem du dieses Template über den Button **"Use this template"** für dein eigenes Repository übernommen hast, führe folgende Schritte durch:
 
-1.  **Projektnamen anpassen:** Suche im gesamten Projekt nach `AspNetCoreHighPerformanceTemplate` und ersetze es durch den Namen deines Projekts. Dies ist vor allem für die Namespaces und die `.sln`-Datei wichtig.
+1.  **Projektnamen anpassen:** Suche im gesamten Projekt nach `HighPerformanceTemplate` und ersetze es durch den Namen deines Projekts. Dies ist vor allem für die Namespaces und die `.sln`-Datei wichtig.
 2.  **Platzhalter ersetzen:**
-    *   Suche und ersetze `[DEIN_USER]` mit deinem GitHub-Benutzernamen.
-    *   Suche und ersetze `[REPO_NAME]` mit dem Namen deines Repositories.
+    - Suche und ersetze `[DEIN_USER]` mit deinem GitHub-Benutzernamen.
+    - Suche und ersetze `[REPO_NAME]` mit dem Namen deines Repositories.
 3.  **README anpassen:** Bearbeite diese `README.md`, um dein spezifisches Projekt zu beschreiben, und lösche diesen Einführungsabschnitt.
+
 ---
 
 <br />
@@ -20,7 +23,7 @@ Nachdem du dieses Template über den Button **"Use this template"** für dein ei
   <h1 align="center">ASP.NET Core High-Performance Template</h1>
 
   <p align="center">
-    <strong>Ein sofort einsatzbereites Template für moderne ASP.NET Core-Anwendungen, basierend auf der Clean Architecture.</strong>
+    <strong>Ein sofort einsatzbereites Template für moderne ASP.NET Core-Anwendungen mit Blazor, MudBlazor & Fluent UI.</strong>
     <br />
     <br />
     <a href="https://github.com/[DEIN_USER]/[REPO_NAME]/issues/new?template=bug_report.md">Bug melden</a>
@@ -46,7 +49,7 @@ Nachdem du dieses Template über den Button **"Use this template"** für dein ei
     <li>
       <a href="#-über-das-projekt">Über das Projekt</a>
       <ul>
-        <li><a href="#-architektur">Architektur</a></li>
+        <li><a href="#-features">Features</a></li>
         <li><a href="#-technologie-stack">Technologie Stack</a></li>
         <li><a href="#-projektstruktur">Projektstruktur</a></li>
       </ul>
@@ -59,6 +62,7 @@ Nachdem du dieses Template über den Button **"Use this template"** für dein ei
     </li>
     <li><a href="#-entwicklung--commands">Entwicklung & Commands</a></li>
     <li><a href="#-testing--qualitätssicherung">Testing</a></li>
+    <li><a href="#-cicd--devops">CI/CD & DevOps</a></li>
     <li><a href="#-mitwirken">Mitwirken</a></li>
     <li><a href="#-lizenz">Lizenz</a></li>
   </ol>
@@ -68,56 +72,60 @@ Nachdem du dieses Template über den Button **"Use this template"** für dein ei
 
 ## 💡 Über das Projekt
 
-Dieses Repository dient als robustes Fundament für neue ASP.NET Core-Projekte. Der Fokus liegt auf hoher Performance, Wartbarkeit und Skalierbarkeit durch die Einhaltung etablierter Design-Prinzipien. Es ist "State of the Art" und zielt auf die jeweils neueste .NET-Version ab.
+Dieses Repository dient als hochmodernes Fundament für neue ASP.NET Core-Projekte. Es ist vorbereitet für **.NET 10** (aktuell .NET 9) und kombiniert die besten UI-Bibliotheken (**MudBlazor** und **Fluent UI**) mit einer robusten Architektur.
 
-### 🏛️ Architektur
+### ✨ Features
 
-Das Herzstück des Templates ist die **Clean Architecture**. Diese sorgt für eine strikte Trennung der Belange (Separation of Concerns) und stellt sicher, dass die Geschäftslogik unabhängig von externen Frameworks oder UI-Details bleibt.
-
-Die Abhängigkeitsregel ist strikt: Äußere Schichten dürfen nur auf innere Schichten verweisen.
-
-1.  **`Domain`**: Enthält die Kernlogik, Entitäten, Enums und Interfaces der Business-Domäne. Diese Schicht hat keine Abhängigkeiten zu anderen Schichten.
-2.  **`Application`**: Orchestriert die Anwendungsfälle (Use Cases), definiert Interfaces für Repositories und externe Dienste und enthält die Anwendungslogik. Hängt nur von `Domain` ab.
-3.  **`Infrastructure`**: Implementiert die in der `Application`-Schicht definierten Interfaces. Hier befinden sich Datenbankzugriffe (z.B. via Entity Framework Core), Anbindungen an externe APIs und andere Infrastruktur-Details. Hängt von `Application` ab.
-4.  **`Api`**: Der Einstiegspunkt der Anwendung (ASP.NET Core Web API). Nimmt HTTP-Requests entgegen, leitet sie an die `Application`-Schicht weiter und gibt die Ergebnisse zurück. Hängt von `Application` und `Infrastructure` ab.
-
-```mermaid
-graph TD;
-    A[Api] --> B[Application];
-    C[Infrastructure] --> B;
-    B --> D[Domain];
-```
+- **Dual UI Support**:
+  - **MudBlazor** für Material Design.
+  - **Fluent UI Blazor** für Windows 11 Ästhetik.
+  - **Theme Switcher**: Dynamisches Umschalten zwischen den Designs zur Laufzeit.
+- **Moderne Architektur**:
+  - Clean Architecture Ansätze.
+  - "Single Class per File" Fokus.
+  - Nutzung von `GlobalUsings.cs` (Barrel Files).
+- **Fortschrittliches Testing**:
+  - **Unit Tests** mit xUnit.
+  - **Integration Tests** mit `WebApplicationFactory`.
+  - **E2E Tests** mit Playwright.
+- **Entwickler-Erfahrung**:
+  - Konfiguriert für **VS Code** und **Sublime Text 4**.
+  - **EditorConfig** für strenges Linting.
+  - **Makefile** für einfache Befehlssteuerung.
 
 ### 🛠 Technologie Stack
 
-| Komponente   | Technologie / Bibliothek         | Beschreibung                                     |
-| :----------- | :------------------------------- | :----------------------------------------------- |
-| **Core**     | .NET 10 (Target) / ASP.NET Core  | Web-Framework für die API                        |
-| **Testing**  | xUnit                            | Test-Framework für Unit-Tests                    |
-| **Testing**  | FluentAssertions                 | Lesbarere und verständlichere Assertions in Tests|
-| **Testing**  | Moq                              | Mocking-Framework zur Isolation von Abhängigkeiten |
-| **Build**    | Makefile                         | Standardisierte Skripte für Entwicklungs-Tasks   |
-| **CI/CD**    | GitHub Actions                   | Vorbereitet für automatisierte Builds & Tests    |
+| Komponente  | Technologie / Bibliothek  | Beschreibung                    |
+| :---------- | :------------------------ | :------------------------------ |
+| **Core**    | .NET 9 (Ready for 10)     | Neuestes ASP.NET Core Framework |
+| **UI**      | Blazor WebAssembly / Auto | Client-seitige Interaktivität   |
+| **UI Lib**  | MudBlazor                 | Material Design Komponenten     |
+| **UI Lib**  | Fluent UI Blazor          | Windows 11 / Office Komponenten |
+| **Testing** | xUnit                     | Unit- & Integration-Tests       |
+| **Testing** | Playwright                | End-to-End Browser Tests        |
+| **Build**   | Makefile                  | Standardisierte Skripte         |
+| **CI/CD**   | GitHub Actions            | Automatisierte Pipelines        |
 
 ### 📂 Projektstruktur
 
 ```text
 [REPO_NAME]/
-├── .github/                 # GitHub Konfigurationen
-├── docs/                    # Projektdokumentation
+├── .github/                 # GitHub Actions & Dependabot
 ├── src/                     # Quellcode
-│   ├── Api/                 # ASP.NET Core Web API
-│   ├── Application/         # Anwendungslogik & Use Cases
-│   ├── Domain/              # Business-Entitäten & Kernlogik
-│   └── Infrastructure/      # Datenbank, externe Dienste, etc.
+│   ├── HighPerformanceTemplate.Host/    # ASP.NET Core API / Server
+│   ├── HighPerformanceTemplate.Client/  # Blazor WebAssembly Client
+│   └── HighPerformanceTemplate.Shared/  # Gemeinsame DTOs & Interfaces
 ├── tests/                   # Testprojekte
-│   └── Application.Tests/   # Unit-Tests für die Application-Schicht
-├── .editorconfig            # Coding Style Definitionen
-├── .gitignore               # Ignorierte Git-Dateien
-├── Makefile                 # Shortcut-Befehle für die Entwicklung
-├── AspNetCoreHighPerformanceTemplate.sln # Solution-Datei
+│   ├── HighPerformanceTemplate.UnitTests/       # xUnit Tests
+│   ├── HighPerformanceTemplate.IntegrationTests/# Integrationstests
+│   └── HighPerformanceTemplate.E2ETests/        # Playwright E2E Tests
+├── .editorconfig            # Coding Style Regeln
+├── .gitignore               # Git Ignore Datei
+├── Makefile                 # Entwicklungs-Befehle
+├── HighPerformanceTemplate.sln # Solution-Datei
 └── README.md                # Diese Datei
 ```
+
 <p align="right">(<a href="#readme-top">zurück nach oben</a>)</p>
 
 ---
@@ -129,48 +137,71 @@ Folge diesen Schritten, um das Projekt lokal aufzusetzen.
 ### Voraussetzungen
 
 Stelle sicher, dass folgende Tools auf deinem System installiert sind:
-*   **Git**
-*   **[.NET SDK](https://dotnet.microsoft.com/download)** (Version 10 oder die jeweils neueste)
+
+- **Git**
+- **[.NET 9 SDK](https://dotnet.microsoft.com/download)** (oder neuer)
+- **Node.js** (benötigt für Playwright)
 
 ### Entwicklung & Commands
 
 Dieses Projekt nutzt ein `Makefile`, um häufige Befehle zu vereinfachen.
 
-| Befehl      | Beschreibung                               | Äquivalenter `dotnet` Befehl                               |
-| :---------- | :----------------------------------------- | :--------------------------------------------------------- |
-| `make init`   | Stellt alle Projekt-Abhängigkeiten wieder her | `dotnet restore`                                           |
-| `make build`  | Kompiliert die gesamte Solution            | `dotnet build`                                             |
-| `make run`    | Startet die API im Development-Modus     | `dotnet run --project src/Api/Api.csproj`                  |
-| `make test`   | Führt alle Tests aus                       | `dotnet test`                                              |
-| `make clean`  | Löscht alle `bin` und `obj` Ordner         | `dotnet clean`                                             |
-| `make lint`   | Prüft die Code-Formatierung                | `dotnet format --verify-no-changes`                        |
+| Befehl       | Beschreibung                             | Äquivalenter `dotnet` Befehl                      |
+| :----------- | :--------------------------------------- | :------------------------------------------------ |
+| `make build` | Kompiliert die gesamte Solution          | `dotnet build`                                    |
+| `make run`   | Startet die Host-Anwendung               | `dotnet run --project src/...Host/...Host.csproj` |
+| `make test`  | Führt alle Tests aus (Unit, Integration) | `dotnet test`                                     |
+| `make clean` | Löscht alle `bin` und `obj` Ordner       | `dotnet clean`                                    |
 
 <p align="right">(<a href="#readme-top">zurück nach oben</a>)</p>
 
-### 🧪 Testing & Qualitätssicherung
+---
 
-Qualitätssicherung ist ein zentraler Bestandteil dieses Templates.
+## 🧪 Testing & Qualitätssicherung
 
-**Unit Tests**
-Führe die Unit-Tests aus, um die korrekte Funktionsweise der Anwendungslogik sicherzustellen.
+Umfassende Testabdeckung ist essenziell für dieses Template.
+
+**Unit & Integration Tests**
+
 ```Bash
 make test
 ```
 
-**Code-Style**
-Die Einhaltung des Code-Styles wird durch die `.editorconfig` und den `lint`-Befehl geprüft.
+**E2E Tests (Playwright)**
+Um die End-to-End Tests auszuführen:
+
 ```Bash
-make lint
+cd tests/HighPerformanceTemplate.E2ETests
+dotnet test
 ```
+
+**Code-Style**
+Die Einhaltung des Code-Styles wird durch die `.editorconfig` strikt erzwungen und von modernen IDEs (VS Code, Rider, Visual Studio) automatisch erkannt.
 
 <p align="right">(<a href="#readme-top">zurück nach oben</a>)</p>
 
+---
+
+## 🔄 CI/CD & DevOps
+
+Das Projekt beinhaltet vorkonfigurierte Workflows:
+
+- **GitHub Actions**: Automatisiertes Bauen und Testen bei jedem Push auf `main` oder `develop`.
+- **Dependabot**: Hält NuGet-Pakete und GitHub-Actions automatisch aktuell.
+- **GitHub Projects**: Kann für Kanban-Board genutzt werden (Repository-Einstellung).
+
+<p align="right">(<a href="#readme-top">zurück nach oben</a>)</p>
+
+---
+
 ## 🤝 Mitwirken
-Beiträge sind willkommen! Bitte lies die `CONTRIBUTING.md` für Details zum Prozess.
+
+Beiträge sind willkommen! Bitte erstelle einen Fork und sende einen Pull Request.
 
 <p align="right">(<a href="#readme-top">zurück nach oben</a>)</p>
 
 ## 📄 Lizenz
+
 Veröffentlicht unter der MIT Lizenz. Siehe `LICENSE` für weitere Informationen.
 
 <p align="right">(<a href="#readme-top">zurück nach oben</a>)</p>
