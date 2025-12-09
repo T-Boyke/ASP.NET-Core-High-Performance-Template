@@ -14,7 +14,7 @@ Nachdem du dieses Template mit dem Button **"Use this template"** erstellt hast,
 <br />
 <div align="center">
   <a href="https://github.com/[DEIN_USER]/[REPO_NAME]">
-    <img src="docs/assets/logo.png" alt="Logo" width="120" height="120">
+   <img src="https://placehold.co/1200x300/512bd4/ffffff?text=ASP.NET+Core+High+Performance+Template&font=roboto" alt="Project Banner">
   </a>
 
   <h1 align="center">[PROJEKT TITEL]</h1>
