@@ -1,12 +1,11 @@
 {
   "recommendations": [
+    "ms-dotnettools.csdevkit",
     "editorconfig.editorconfig",
-    "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
-    "yzhang.markdown-all-in-one",
-    "streetsidesoftware.code-spell-checker",
-    "eamodio.gitlens",
-    "hediet.vscode-drawio",
-    "MermaidChart.vscode-mermaid-chart"
+    "fluentassertions.fluentassertions-vs-code",
+    "formulahendry.dotnet-test-explorer",
+    "ms-vscode.makefile-tools",
+    "mermaid-js.mermaid-preview",
+    "kreativ-software.csharpextensions"
   ]
 }

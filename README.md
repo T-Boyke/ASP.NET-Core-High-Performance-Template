@@ -1,14 +1,14 @@
 <a name="readme-top"></a>
 
 ---
-### 📝 Verwendung dieses Templates
-Nachdem du dieses Template mit dem Button **"Use this template"** erstellt hast, führe folgende Schritte durch:
+### 📝 So verwendest du dieses Template
+Nachdem du dieses Template über den Button **"Use this template"** für dein eigenes Repository übernommen hast, führe folgende Schritte durch:
 
-1. Suche und ersetze alle Vorkommen von `[REPO_NAME]` mit deinem Projektnamen.
-2. Suche und ersetze `[DEIN_USER]` mit deinem GitHub-Username.
-3. Aktualisiere die `package.json` (Name, Version, Autor).
-4. Bearbeite die `.env.example` passend zu deinem Projekt.
-5. Lösche diesen Abschnitt aus der README.
+1.  **Projektnamen anpassen:** Suche im gesamten Projekt nach `AspNetCoreHighPerformanceTemplate` und ersetze es durch den Namen deines Projekts. Dies ist vor allem für die Namespaces und die `.sln`-Datei wichtig.
+2.  **Platzhalter ersetzen:**
+    *   Suche und ersetze `[DEIN_USER]` mit deinem GitHub-Benutzernamen.
+    *   Suche und ersetze `[REPO_NAME]` mit dem Namen deines Repositories.
+3.  **README anpassen:** Bearbeite diese `README.md`, um dein spezifisches Projekt zu beschreiben, und lösche diesen Einführungsabschnitt.
 ---
 
 <br />
@@ -17,17 +17,12 @@ Nachdem du dieses Template mit dem Button **"Use this template"** erstellt hast,
    <img src="https://placehold.co/1200x300/512bd4/ffffff?text=ASP.NET+Core+High+Performance+Template&font=roboto" alt="Project Banner">
   </a>
 
-  <h1 align="center">[PROJEKT TITEL]</h1>
+  <h1 align="center">ASP.NET Core High-Performance Template</h1>
 
   <p align="center">
-    <strong>[Ein prägnanter Slogan oder Einzeiler, der das Projekt beschreibt]</strong>
+    <strong>Ein sofort einsatzbereites Template für moderne ASP.NET Core-Anwendungen, basierend auf der Clean Architecture.</strong>
     <br />
     <br />
-    <a href="https://[DEIN_USER].github.io/[REPO_NAME]"><strong>Dokumentation »</strong></a>
-    <br />
-    <br />
-    <a href="#-demo">Live Demo</a>
-    ·
     <a href="https://github.com/[DEIN_USER]/[REPO_NAME]/issues/new?template=bug_report.md">Bug melden</a>
     ·
     <a href="https://github.com/[DEIN_USER]/[REPO_NAME]/issues/new?template=feature_request.md">Feature anfragen</a>
@@ -40,18 +35,18 @@ Nachdem du dieses Template mit dem Button **"Use this template"** erstellt hast,
 [![GitHub Issues](https://img.shields.io/github/issues/[DEIN_USER]/[REPO_NAME])](https://github.com/[DEIN_USER]/[REPO_NAME]/issues)
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/[DEIN_USER]/[REPO_NAME])](https://github.com/[DEIN_USER]/[REPO_NAME]/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![CI Build](https://github.com/[DEIN_USER]/[REPO_NAME]/actions/workflows/ci.yml/badge.svg)](https://github.com/[DEIN_USER]/[REPO_NAME]/actions)
 
 </div>
 
 ---
 
 <details>
-  <summary><strong>📖 Inhaltsverzeichnis</strong> (Klicken zum Ausklappen)</summary>
+  <summary><strong>📖 Inhaltsverzeichnis</strong></summary>
   <ol>
     <li>
       <a href="#-über-das-projekt">Über das Projekt</a>
       <ul>
+        <li><a href="#-architektur">Architektur</a></li>
         <li><a href="#-technologie-stack">Technologie Stack</a></li>
         <li><a href="#-projektstruktur">Projektstruktur</a></li>
       </ul>
@@ -60,17 +55,12 @@ Nachdem du dieses Template mit dem Button **"Use this template"** erstellt hast,
       <a href="#-getting-started">Getting Started</a>
       <ul>
         <li><a href="#voraussetzungen">Voraussetzungen</a></li>
-        <li><a href="#installation">Installation</a></li>
-        <li><a href="#umgebungsvariablen">Umgebungsvariablen</a></li>
       </ul>
     </li>
-    <li><a href="#-nutzung">Nutzung</a></li>
     <li><a href="#-entwicklung--commands">Entwicklung & Commands</a></li>
     <li><a href="#-testing--qualitätssicherung">Testing</a></li>
-    <li><a href="#-roadmap">Roadmap</a></li>
     <li><a href="#-mitwirken">Mitwirken</a></li>
     <li><a href="#-lizenz">Lizenz</a></li>
-    <li><a href="#-kontakt--support">Kontakt</a></li>
   </ol>
 </details>
 
@@ -78,174 +68,109 @@ Nachdem du dieses Template mit dem Button **"Use this template"** erstellt hast,
 
 ## 💡 Über das Projekt
 
-[![Produkt Screenshot](docs/assets/screenshot.png)](https://[deine-demo-url].com)
+Dieses Repository dient als robustes Fundament für neue ASP.NET Core-Projekte. Der Fokus liegt auf hoher Performance, Wartbarkeit und Skalierbarkeit durch die Einhaltung etablierter Design-Prinzipien. Es ist "State of the Art" und zielt auf die jeweils neueste .NET-Version ab.
 
-[Hier kommt der ausführliche Elevator-Pitch hin. Beschreibe das Problem, das dieses Projekt löst. Warum hast du es gebaut? Was unterscheidet es von existierenden Lösungen? Halte diesen Teil inspirierend.]
+### 🏛️ Architektur
 
-**Hauptfunktionen:**
-* ✅ **[Feature 1]:** [Kurze Beschreibung, z.B. Echtzeit-Synchronisation]
-* ✅ **[Feature 2]:** [Kurze Beschreibung, z.B. Offline-Support]
-* ✅ **[Feature 3]:** [Kurze Beschreibung, z.B. Modulare Architektur]
-* ✅ **[Feature 4]:** [Kurze Beschreibung, z.B. Barrierefreiheit nach WCAG]
+Das Herzstück des Templates ist die **Clean Architecture**. Diese sorgt für eine strikte Trennung der Belange (Separation of Concerns) und stellt sicher, dass die Geschäftslogik unabhängig von externen Frameworks oder UI-Details bleibt.
 
-<p align="right">(<a href="#readme-top">zurück nach oben</a>)</p>
+Die Abhängigkeitsregel ist strikt: Äußere Schichten dürfen nur auf innere Schichten verweisen.
+
+1.  **`Domain`**: Enthält die Kernlogik, Entitäten, Enums und Interfaces der Business-Domäne. Diese Schicht hat keine Abhängigkeiten zu anderen Schichten.
+2.  **`Application`**: Orchestriert die Anwendungsfälle (Use Cases), definiert Interfaces für Repositories und externe Dienste und enthält die Anwendungslogik. Hängt nur von `Domain` ab.
+3.  **`Infrastructure`**: Implementiert die in der `Application`-Schicht definierten Interfaces. Hier befinden sich Datenbankzugriffe (z.B. via Entity Framework Core), Anbindungen an externe APIs und andere Infrastruktur-Details. Hängt von `Application` ab.
+4.  **`Api`**: Der Einstiegspunkt der Anwendung (ASP.NET Core Web API). Nimmt HTTP-Requests entgegen, leitet sie an die `Application`-Schicht weiter und gibt die Ergebnisse zurück. Hängt von `Application` und `Infrastructure` ab.
+
+```mermaid
+graph TD;
+    A[Api] --> B[Application];
+    C[Infrastructure] --> B;
+    B --> D[Domain];
+```
 
 ### 🛠 Technologie Stack
 
-Dieses Projekt setzt auf moderne, robuste Technologien:
-
-| Komponente | Technologie | Beschreibung / Version |
-| :--- | :--- | :--- |
-| **Core** | [z.B. Angular] | [Frontend Framework (v17+)] |
-| **Language** | [z.B. TypeScript] | [Strict Typing für Skalierbarkeit] |
-| **Styling** | [z.B. Tailwind CSS] | [Utility-First CSS Framework] |
-| **State** | [z.B. Signals / NgRx] | [Reaktives State Management] |
-| **Build** | [z.B. Vite / Esbuild] | [High-Performance Bundler] |
-| **CI/CD** | GitHub Actions | Automatisierte Tests & Deployments |
-
-<p align="right">(<a href="#readme-top">zurück nach oben</a>)</p>
+| Komponente   | Technologie / Bibliothek         | Beschreibung                                     |
+| :----------- | :------------------------------- | :----------------------------------------------- |
+| **Core**     | .NET 10 (Target) / ASP.NET Core  | Web-Framework für die API                        |
+| **Testing**  | xUnit                            | Test-Framework für Unit-Tests                    |
+| **Testing**  | FluentAssertions                 | Lesbarere und verständlichere Assertions in Tests|
+| **Testing**  | Moq                              | Mocking-Framework zur Isolation von Abhängigkeiten |
+| **Build**    | Makefile                         | Standardisierte Skripte für Entwicklungs-Tasks   |
+| **CI/CD**    | GitHub Actions                   | Vorbereitet für automatisierte Builds & Tests    |
 
 ### 📂 Projektstruktur
 
-Ein Überblick über die wichtigsten Verzeichnisse und Dateien:
-
 ```text
 [REPO_NAME]/
-├── .github/                 # GitHub Templates, Actions & Dependabot Config
-├── docs/                    # Dokumentation & Assets
-├── src/                     # Quellcode der Anwendung
-│   ├── app/                 # Hauptlogik / Komponenten
-│   ├── assets/              # Statische Dateien (Bilder, Fonts)
-│   └── environments/        # Umgebungskonfigurationen
-├── tests/                   # Test-Dateien (Unit & E2E)
+├── .github/                 # GitHub Konfigurationen
+├── docs/                    # Projektdokumentation
+├── src/                     # Quellcode
+│   ├── Api/                 # ASP.NET Core Web API
+│   ├── Application/         # Anwendungslogik & Use Cases
+│   ├── Domain/              # Business-Entitäten & Kernlogik
+│   └── Infrastructure/      # Datenbank, externe Dienste, etc.
+├── tests/                   # Testprojekte
+│   └── Application.Tests/   # Unit-Tests für die Application-Schicht
 ├── .editorconfig            # Coding Style Definitionen
 ├── .gitignore               # Ignorierte Git-Dateien
-├── Makefile                 # Shortcut-Befehle für Entwicklung
-├── CHANGELOG.md             # Versionshistorie
-└── README.md                # Projektbeschreibung
+├── Makefile                 # Shortcut-Befehle für die Entwicklung
+├── AspNetCoreHighPerformanceTemplate.sln # Solution-Datei
+└── README.md                # Diese Datei
 ```
-### 🚀 Getting Started
-Folge diesen Schritten, um eine lokale Kopie des Projekts zum Laufen zu bringen.
-
-**Voraussetzungen:**
-
-Stelle sicher, dass folgende Tools auf deinem System installiert sind:
-- **Git** (Download)
-- **[Laufzeitumgebung, z.B. Node.js]** (v20.x oder höher empfohlen)
-- **[Paketmanager, z.B. npm]** (v10.x oder höher)
-
-```Bash
-npm install npm@latest -g
-```
-
-**Installation**
-1. **Repository klonen**
-```Bash
-git clone [https://github.com/](https://github.com/)[DEIN_USER]/[REPO_NAME].git
-cd [REPO_NAME]
-```
-2. **Abhängigkeiten installieren** Wir nutzen ein Makefile zur Vereinfachung (siehe unten), oder Standard-Befehle:
-```Bash
-make install
-# Alternativ: npm install / pip install -r requirements.txt
-```
-**Umgebungsvariablen** 
-1. Kopiere die Beispiel-Konfiguration:
-```Bash
-cp .env.example .env
-```
-2. Trage deine API-Schlüssel und Konfigurationen in die .env Datei ein.
-
-⚠️ Wichtig: Die .env Datei wird von Git ignoriert und darf niemals commitet werden!
-
 <p align="right">(<a href="#readme-top">zurück nach oben</a>)</p>
 
-### 💻 Entwicklung & Commands
+---
 
-Dieses Projekt nutzt ein Makefile, um häufige Befehle zu standardisieren. Hier sind die wichtigsten Commands:
+## 🚀 Getting Started
 
-| Befehl | Beschreibung | Äquivalent |
-| :--- | :--- | :--- |
-| `make help` | Zeigt alle verfügbaren Befehle an | - |
-| `make install` | Installiert alle Abhängigkeiten | `npm install` |
-| `make dev` | Startet den lokalen Dev-Server | `npm start` |
-| `make test` | Führt die Test-Suite aus | `npm test` |
-| `make build` | Erstellt einen Production-Build | `npm run build` |
-| `make clean` | Löscht temporäre Ordner (dist, coverage) | `rm -rf ...` |
+Folge diesen Schritten, um das Projekt lokal aufzusetzen.
 
-Manueller Start (ohne Make):
-```Bash
-npm start
-# Server läuft unter http://localhost:4200
-```
+### Voraussetzungen
+
+Stelle sicher, dass folgende Tools auf deinem System installiert sind:
+*   **Git**
+*   **[.NET SDK](https://dotnet.microsoft.com/download)** (Version 10 oder die jeweils neueste)
+
+### Entwicklung & Commands
+
+Dieses Projekt nutzt ein `Makefile`, um häufige Befehle zu vereinfachen.
+
+| Befehl      | Beschreibung                               | Äquivalenter `dotnet` Befehl                               |
+| :---------- | :----------------------------------------- | :--------------------------------------------------------- |
+| `make init`   | Stellt alle Projekt-Abhängigkeiten wieder her | `dotnet restore`                                           |
+| `make build`  | Kompiliert die gesamte Solution            | `dotnet build`                                             |
+| `make run`    | Startet die API im Development-Modus     | `dotnet run --project src/Api/Api.csproj`                  |
+| `make test`   | Führt alle Tests aus                       | `dotnet test`                                              |
+| `make clean`  | Löscht alle `bin` und `obj` Ordner         | `dotnet clean`                                             |
+| `make lint`   | Prüft die Code-Formatierung                | `dotnet format --verify-no-changes`                        |
 
 <p align="right">(<a href="#readme-top">zurück nach oben</a>)</p>
 
 ### 🧪 Testing & Qualitätssicherung
 
-Wir legen großen Wert auf Code-Qualität.
+Qualitätssicherung ist ein zentraler Bestandteil dieses Templates.
+
 **Unit Tests**
-Führen Sie die Unit-Tests aus, um die Logik einzelner Komponenten zu prüfen.
+Führe die Unit-Tests aus, um die korrekte Funktionsweise der Anwendungslogik sicherzustellen.
 ```Bash
 make test
 ```
-**Linting & Formatting**
-Wir nutzen [ESLint/Prettier/Ruff], um Code-Konsistenz zu gewährleisten.
+
+**Code-Style**
+Die Einhaltung des Code-Styles wird durch die `.editorconfig` und den `lint`-Befehl geprüft.
 ```Bash
-npm run lint
+make lint
 ```
-**CI/CD Pipeline**
-Jeder Push auf main oder Pull Request durchläuft automatisch unsere GitHub Actions Pipeline:
-1. **Build:** Prüft, ob der Code kompiliert.
-2. **Test:** Führt alle Unit-Tests aus.
-3. **Audit:** Prüft Abhängigkeiten auf Sicherheitslücken (via Dependabot).
 
 <p align="right">(<a href="#readme-top">zurück nach oben</a>)</p>
 
-### 🗺 Roadmap
-
-Hier ist der aktuelle Plan für zukünftige Features:
-
-- [x] Initiales Setup & Architektur
-- [x] CI/CD Pipeline Integration
-- [ ] [Feature A]: Implementierung von [Details]
-- [ ] [Feature B]: Mehrsprachigkeit (i18n)
-- [ ] [Feature C]: Dark Mode Support
-
-Siehe die offenen Issues für eine vollständige Liste.
+## 🤝 Mitwirken
+Beiträge sind willkommen! Bitte lies die `CONTRIBUTING.md` für Details zum Prozess.
 
 <p align="right">(<a href="#readme-top">zurück nach oben</a>)</p>
 
-### 🤝 Mitwirken
-Beiträge sind das Herz der Open-Source-Community. Wir freuen uns über jeden Pull Request!
-
-Bitte lies unsere CONTRIBUTING.md für Details zu unserem Code of Conduct und dem Prozess für das Einreichen von Pull Requests.
-1. Forke das Projekt
-2. Erstelle deinen Feature Branch (git checkout -b feature/AmazingFeature)
-3. Committe deine Änderungen (git commit -m 'feat: Add some AmazingFeature') - Wir nutzen Conventional Commits!
-4. Pushe in den Branch (git push origin feature/AmazingFeature)
-5. Öffne einen Pull Request
-
-<p align="right">(<a href="#readme-top">zurück nach oben</a>)</p>
-
-### 🛡️ Sicherheit
-
-Bitte melde Sicherheitslücken **nicht** in den öffentlichen Issues.
-Sende stattdessen eine E-Mail an [deine-email@example.com] oder nutze den Security-Tab im Repository.
-
-<p align="right">(<a href="#readme-top">zurück nach oben</a>)</p>
-
-### 📄 Lizenz
-Veröffentlicht unter der MIT Lizenz. Siehe LICENSE für weitere Informationen.
-
-<p align="right">(<a href="#readme-top">zurück nach oben</a>)</p>
-
-### 📞 Kontakt & Support
-Projekt Maintainer: [Dein Name] - [verdächtiger Link entfernt]
-Projekt Link: https://github.com/[DEIN_USER]/[REPO_NAME]
-
-<br />
-
-<div align="center"><h3>Gefällt dir das Projekt?</h3><a href="https://www.buymeacoffee.com/[DEIN_USER]"><img src="https://www.google.com/search?q=https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="180"></a></div>
+## 📄 Lizenz
+Veröffentlicht unter der MIT Lizenz. Siehe `LICENSE` für weitere Informationen.
 
 <p align="right">(<a href="#readme-top">zurück nach oben</a>)</p>

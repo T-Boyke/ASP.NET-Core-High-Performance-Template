@@ -8,7 +8,7 @@ build: ## Kompiliert das Projekt
 	dotnet build --no-restore
 
 run: ## Startet die API
-	dotnet run --project src/MyProject.Api/MyProject.Api.csproj
+	dotnet run --project src/Api/Api.csproj
 
 test: ## Führt Tests mit Coverage aus
 	dotnet test --no-build --verbosity normal --collect:"XPlat Code Coverage"
