@@ -1,31 +1,22 @@
-# Variablen
-APP_NAME = mein-projekt
+.PHONY: init build test run clean lint
 
-# Standard-Ziel
-.PHONY: help
-help: ## Zeigt diese Hilfe an
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
+init: ## Tools und Abhängigkeiten wiederherstellen
+	dotnet restore
+	dotnet tool restore
 
-.PHONY: install
-install: ## Installiert Abhängigkeiten
-	@echo "Installiere Abhängigkeiten..."
-	# Hier Befehl einfügen: z.B. npm install oder pip install -r requirements.txt
+build: ## Kompiliert das Projekt
+	dotnet build --no-restore
 
-.PHONY: dev
-dev: ## Startet den Entwicklungsserver
-	@echo "Starte App..."
-	# Hier Befehl einfügen: z.B. npm start
+run: ## Startet die API
+	dotnet run --project src/MyProject.Api/MyProject.Api.csproj
 
-.PHONY: test
-test: ## Führt Tests aus
-	@echo "Teste..."
-	# Hier Befehl einfügen: z.B. npm test
+test: ## Führt Tests mit Coverage aus
+	dotnet test --no-build --verbosity normal --collect:"XPlat Code Coverage"
 
-.PHONY: build
-build: ## Baut die Anwendung für Produktion
-	@echo "Baue..."
-	# Hier Befehl einfügen: z.B. npm run build
+lint: ## Prüft Code-Style und Formatierung
+	dotnet format --verify-no-changes
+	dotnet build -t:Rebuild -warnaserror
 
-.PHONY: clean
-clean: ## Löscht temporäre Dateien
-	rm -rf dist build coverage
+clean: ## Löscht Binaries
+	dotnet clean
+	rm -rf **/bin **/obj
