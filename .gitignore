@@ -8,29 +8,24 @@ ehthumbs.db
 Thumbs.db
 desktop.ini
 
-# --- Editoren & IDEs (Persönliche Einstellungen gehören nicht ins Repo) ---
-# VS Code
+# --- Editoren ---
+# VS Code - Wir wollen Projekt-Settings teilen!
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-*.code-workspace
+# Aber keine User-History
+.vscode/sftp.json
+.history/
 
-# JetBrains (IntelliJ, WebStorm, PyCharm etc.)
-.idea/
-*.iml
-*.iws
-
-# Eclipse
-.metadata
-.classpath
-.project
-.settings/
-
-# Sublime Text
+# Sublime Text - Projektdatei behalten
 *.sublime-workspace
-*.sublime-project
+!*.sublime-project
+
+# .NET Build Output (Muss ignoriert werden)
+bin/
+obj/
 
 # --- Allgemeine Logs & temporäre Dateien ---
 *.log
